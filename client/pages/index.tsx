@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { saveAs } from "file-saver"; // Import saveAs from file-saver
+import { Badge } from "@/components/ui/badge";
 
 const Home = () => {
   const [selectedFile1, setSelectedFile1] = useState<any>();
@@ -44,34 +45,61 @@ const Home = () => {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center gap-8">
-      <article className="w-full flex justify-center items-center gap-8">
-        <div className="flex flex-col gap-2 p-12 border rounded-md shadow-sm">
-          <Input
-            type="file"
-            onChange={(e: any) => {
-              setSelectedFile1(e.target.files[0]);
-            }}
-          />
-        </div>
-        <div className="flex flex-col gap-2 p-12 border rounded-md shadow-sm">
-          <Input
-            type="file"
-            onChange={(e: any) => {
-              setSelectedFile2(e.target.files[0]);
-            }}
-          />
+    <section className="w-full min-h-screen flex flex-col justify-start items-center gap-8 p-10">
+      <article className="flex flex-col justify-center items-center gap-4 mt-12">
+        <h1 className="font-black text-6xl">Image Stitching</h1>
+        <p className="w-full max-w-lg text-center">
+          Make your dream pics into one whole story! Upload images you want to
+          make into a Panoramic Image
+        </p>
+        <div className="flex gap-2 justify-center items-center">
+          <Badge variant={"outline"} className="px-3 text-base uppercase">
+            KIELO MERCADO
+          </Badge>
+          <Badge variant={"outline"} className="px-3 text-base uppercase">
+            VALEN SALIG
+          </Badge>
+          <Badge variant={"outline"} className="px-3 text-base uppercase">
+            CALVIN CORONADO
+          </Badge>
+          <Badge variant={"outline"} className="px-3 text-base uppercase">
+            Ghrazielle Ramos
+          </Badge>
+          <Badge variant={"outline"} className="px-3 text-base uppercase">
+            Mich Andrea
+          </Badge>
         </div>
       </article>
-      <div className="">
-        <Button onClick={handleUpload}>Stitch Images</Button>
-      </div>
-      <div className="w-80 h-80 relative overflow-hidden border rounded-md">
-        <Image src={imageUrl} alt="" fill />
-      </div>
-      <div className="">
-        <Button onClick={downloadImage}>Download Stitched Image</Button>{" "}
-      </div>
+
+      <article className="flex flex-col justify-center items-center gap-8 mt-10 border rounded-md p-8">
+        <div className="w-full flex justify-center items-center gap-8">
+          <div className="flex flex-col gap-2 p-12 border rounded-md shadow-sm">
+            <Input
+              type="file"
+              onChange={(e: any) => {
+                setSelectedFile1(e.target.files[0]);
+              }}
+            />
+          </div>
+          <div className="flex flex-col gap-2 p-12 border rounded-md shadow-sm">
+            <Input
+              type="file"
+              onChange={(e: any) => {
+                setSelectedFile2(e.target.files[0]);
+              }}
+            />
+          </div>
+        </div>
+        <div className="">
+          <Button onClick={handleUpload}>Stitch Images</Button>
+        </div>
+        <div className="w-80 h-80 relative overflow-hidden border rounded-md">
+          <Image src={imageUrl} alt="" fill />
+        </div>
+        <div className="">
+          <Button onClick={downloadImage}>Download Stitched Image</Button>{" "}
+        </div>
+      </article>
     </section>
   );
 };
