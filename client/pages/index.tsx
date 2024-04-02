@@ -97,8 +97,8 @@ const Home = () => {
   };
 
   const GROUP = [
-    "Mich Andrea",
     "CALVIN CORONADO",
+    "MICHELLE MARTINEZ",
     "KIELO MERCADO",
     "Ghrazielle Ramos",
     "VALEN SALIG",
