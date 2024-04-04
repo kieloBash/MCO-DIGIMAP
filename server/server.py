@@ -15,7 +15,7 @@ def upload_file():
     file1 = request.files['image1']
     file2 = request.files['image2']
     
-    processed = stitch_images(file1,file2 )
+    processed = stitch_images(file1,file2)
     
     # Save the processed image to a temporary file
     temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.png')
