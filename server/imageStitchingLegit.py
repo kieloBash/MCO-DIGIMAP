@@ -27,6 +27,7 @@ def mix_match(leftImage, warpedImage):
 
 def stitch_images(files):
     images = []
+    MIN_MATCH_COUNT = 10 
 
     for file in files:
         # Read the file content as bytes
@@ -61,7 +62,9 @@ def stitch_images(files):
 
     # store all the good matches as per Lowe's ratio test.
     good = []
-    for m,n in matches:
+    for match in matches:
+        m = match[0]
+        n = match[1]
         if m.distance < 0.7*n.distance:
             good.append(m)
 
@@ -71,7 +74,8 @@ def stitch_images(files):
 
         M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC,5.0)
 
-        h,w = img1.shape
+        h, w = img1.shape
+
         pts = np.float32([ [0,0],[0,h-1],[w-1,h-1],[w-1,0] ]).reshape(-1,1,2)
         dst = cv2.perspectiveTransform(pts,M)
 
