@@ -3,13 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "client-build": "cd client && npm run build",
-    "client-start": "cd client && npm start",
-    "start": "npm-run-all --parallel client-start server-start",
-    "build": "npm-run-all build",
-    "build:client": "cd client && npm run build",
-    "build:server": "cd server && npm run build",
-    "server-start": "cd server && npm start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
