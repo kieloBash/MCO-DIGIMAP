@@ -136,7 +136,7 @@ const Home = () => {
           {isLoading ? (
             <div className="w-full flex-1 justify-center items-center flex gap-2">
               <h1 className="text-xl font-semibold">
-                Your image is converting into a Panorama pls wait...
+                Your image is converting into a Panorama please wait...
               </h1>
               <Loader2 className="animate-spin" />
             </div>
