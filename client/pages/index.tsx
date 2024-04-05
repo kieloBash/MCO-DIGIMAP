@@ -13,6 +13,7 @@ import {
   ShipWheelIcon,
   Trash,
 } from "lucide-react";
+import Head from "next/head";
 
 const Home = () => {
   const [selectedFile1, setSelectedFile1] = useState<any>();
@@ -106,6 +107,9 @@ const Home = () => {
 
   return (
     <section className="w-full min-h-screen flex flex-col justify-start items-center gap-8 p-8">
+      <Head>
+        <title>GRP6 DIGIMAP - IMAGE STITCHING</title>
+      </Head>
       <article className="flex flex-col justify-center items-center gap-4">
         <h1 className="font-black text-6xl">Image Stitching</h1>
         <p className="w-full max-w-lg text-center">
@@ -258,12 +262,6 @@ const Home = () => {
                   Get Stitching <ShipWheelIcon className="w-6 h-6 ml-2" />
                 </Button>
               </div>
-              {/* <div className="w-80 h-80 relative overflow-hidden border rounded-md">
-          <Image src={imageUrl} alt="" fill />
-        </div>
-        <div className="">
-          <Button onClick={downloadImage}>Download Stitched Image</Button>{" "}
-        </div> */}
             </article>
           )}
         </>
@@ -272,11 +270,11 @@ const Home = () => {
           <div className="flex flex-col justify-between items-center w-full max-w-xs">
             <div className="flex flex-col w-full max-w-xs">
               <h1 className="text-2xl font-black">
-                Here's the result of combining your two images!
+                {`Here's the result of combining your two images!`}
               </h1>
               <p className="mt-1">
-                We used an image stitching algorithm to combine the two images
-                by...
+                {`We used an image stitching algorithm to combine the two images
+                by...`}
               </p>
               <div className="flex gap-2 mt-4 items-center">
                 <div className="w-24 h-24 relative overflow-hidden rounded-xl">
