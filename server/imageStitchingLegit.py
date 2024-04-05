@@ -1,6 +1,8 @@
 import numpy as np
 import cv2
 import glob
+from matplotlib import pyplot as plt
+import random
 import imutils
 import os
 
