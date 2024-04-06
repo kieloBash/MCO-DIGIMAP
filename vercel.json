@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "client/public",
+        "src": "client/",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "build"
